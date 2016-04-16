@@ -1,0 +1,429 @@
+******** CBM (V0.02) Manual ********
+
+1.00 - Introduction
+  1.01 - Character Editor Overview
+  1.02 - Block Editor Overview
+  1.03 - Map Editor Overview
+2.00 - Files
+3.00 - Key Help
+4.00 - Character Editor
+5.00 - Conversion of games from other platforms
+  5.01 - Character conversion from 8x8 to 6x8 (6x6 in CBM)
+  5.02 - Colour
+6.00 - Example project - Converting Cybernoid
+7.00 - Differences between versions
+8.00 - Credits
+
+******** 1.00 - Introduction
+CBM allows the design of Game backgrounds which may then be
+used in platform games.
+
+Commercial games such a Dizzy, Rick Dangerous, Armalyte,
+Rambo, Rainbow islands, Times of Lore, Hawkeye, Zaxxon and
+Sanxion all used some form of Character/Block/Map based
+algorythm for its background scenery.
+
+And this is exactly what CBM stands for and is used for
+designing. CBM stands for Character, Block, Map.
+
+Most other machines of the 80's had 8x8 pixel characters and
+could usually be configured to get alot more than the measly
+96 available on the Oric. Therefore CBM was specifically
+written in HIRES and each character is 6x6 pixels.
+
+Blocks are like building blocks or bricks or puzzle pieces
+in the scenery. On there own they might be used as small
+furniture or bricks or rocks but put together (in Maps) they
+can form much bigger things such as puzzle rooms, outside
+scenes or massive space stations.
+
+Please note that it is beyond the scope of this editor to
+describe ways of implementing Sprites onto backgrounds
+generated using this editor.
+It is not advised to use blocks as sprites as the movement
+steps are limited to the size of a block. Also note once
+set, blocks sizes cannot be changed.
+
+
+CBM can be used to design both Monochrome and Colour graphics.
+The latter using the AIC technique popularised in Oric games
+like Stormlord and Impossible Mission.
+AIC emphasises the Inverse property a bitmap byte may posess
+allowing up to 6 colours to exist but with no apparent
+attributes.
+
+The actual attributes always exist down the left hand side of
+the screen and since they ultimately colourise the graphics on
+each row they can simply all switch to white ink to switch the
+pallette to monochrome (hence the monochrome option in both
+Stormlord and Impossible Mission games on the Oric).
+
+CBM supports 256 Characters.
+
+Map sizes may extend beyond the visible screen area for 
+games such as Airwolf, Turrican or Boulderdash where the
+level is composed of a single large map.
+Alternatively Map sizes may be equal or smaller than the
+physical screen area for puzzle games such as Bombjack,
+UWOL and Bubble Bobble.
+
+Spare blocks may be used as place-holders. This is a format
+which marks a certain place on the screen as where a
+creature or item may reside or a movement may be defined.
+The item or creature is not displayed until the game
+commences and is handled by the sprite handler.
+
+Items such as health and weapon bonuses may be marked in
+this way and optionally be displayed.
+
+******** 1.01 - Character Editor Overview
+The Character Editor allows the user to edit any one of the
+256 characters shown in the large block to the right of the
+character grid.
+One may set the pallette colours in the Character Editor.
+Each character is fixed at 6x6 pixels.
+
+******** 1.02 Block Editor Overview
+The Block Editor allows the user to place the characters
+within the currently selected block.
+
+******** 1.03 Map Editor Overview
+The Map editor allows the user to place the blocks on the
+map.
+
+
+******** 2.00 Files
+Files is the first screen that is presented to the user on
+boot up of the editor.
+It shows the current dimensions and total memory usage of
+all graphics in the default/current project.
+
+Option 1 - Save Project
+Saves the project to the selected device (Tape or Disk).
+Save will display the current directory (Disk only) then
+prompt for the filename. Once entered CBM will save the
+entire project.
+
+A project includes all graphics, all key configurations,
+project dimensions and IDs and the Collision Table.
+
+Option 2 - Load Project
+Loads the project from the selected device (Tape or Disk).
+Load will display the current directory (Disk only) then
+prompt for the filename. Once entered CBM will load the
+entire project.
+
+Option 3 - list Directory
+This option will list the currently selected drives disk
+directory (Not available for Tape), wait for a key press
+then return to Files.
+
+Option 4 - Capture
+Allows the capturing of graphics from a HIRES screen to
+be stored in Characters or Blocks.
+
+Capture will list the current directory (Disk only) then
+prompt for the full filename including extension. Once
+entered CBM will attempt to load the file.
+If found (Disk only) the file will be loaded. Take
+special care to ensure file falls within the HIRES
+address range otherwise the Editor may very well crash.
+
+Once the image is loaded the user may move a capture
+cursor around the screen and change its size (Character
+Unit only) so allowing the user to capture graphics.
+once an area is captured further areas may then be
+captured.
+
+Option 5 - Update Save
+Once the project has been Saved or Loaded once in the
+current session subsequent saves may be performed using
+this shortcut. The file will be saved to the currently
+selected device and drive but using the last filename.
+
+Option 6 - Dump
+Dump allows the user to dump the entire Characters,
+Blocks and Map data to the Printer. This is only useful
+in Emulator environments whereby the output may be
+copied to xa source code for implementation into the
+usaers application.
+
+The Dump will print one Character per row (6 bytes).
+It will then print each block with the block width as
+the number of bytes per row and the block height as the
+number of rows.
+The map will then be printed with 16 bytes per row
+followed by the collision table.
+
+Option 7 - New Project
+New project allows the user to define the size and
+quantity of blocks and maps. This option will display
+the amount of memory used for each change made.
+If the size goes beyond the memory available the total
+will turn red and the option may not be completed
+until the size is reduced.
+
+Once the new dimensions are set the project should
+immediatelybe saved.
+
+Option 8 - Device Change
+Allows the selection of Tape or Disk operation to be
+selected
+
+Option 9 - Drive Change
+Allows the selection of Drives A through D to be
+selected
+
+Option 0 - Quit
+Returns the Oric to the BASIC Ready prompt.
+
+******** 3.00 Key Help
+Each CBM Editor is provided with Key Help. Press
+Ctrl H to enter Key Help.
+
+Key Help lists all the Keys used in the Editor
+and a description of each.
+Key Help also provides a Redefine feature which
+allows any key to be set to a different key
+combination. All Keys of all editors are saved
+to the project file.
+
+
+
+******** 4.00 Character Editor
+Characters are displayed in the Character Grid in
+the top left of the screen.
+
+For help on Keys, press Ctrl H
+
+******** 5.00 Conversion of games from other platforms
+One major headache when contemplating the conversion
+of a game to the Oric has traditionally been
+graphics.
+
+One way is to discover the block sizes and redraw
+them using multiples of Orics 6 pixel wide byte
+using a HIRES editor such as HIDE or on the PC
+using a graphics package such as Promotion or PSP.
+For example if you have a game that uses blocks
+that are 24 x 24 pixels. This may be directly
+converted.
+
+Two of the more common aspects of graphics which
+prove a challenge when converting...
+
+
+******** 5.01 Character conversion from 8x8 to 6x8 (6x6 in CBM)
+This is a major issue since its a reduction (not a
+enlargement) of resolution but with care and
+attention it may be achieved.
+One must look at the essential/s within the 8x8
+character then transfer them to the 6x6.
+
+For example if the character is forming the top part
+of a ledge then the essential is the ledge edge and
+should be drawn first on the 6x6.
+
+One could at the point simply clip the 8x8 to 6x6
+but if the essentials are close to the edge then
+they will be missed.
+
+One might also shrink the 8x8 but this may remove
+essentials such as shrinking an 8x8 character set.
+
+If the character is part of a wall with an inset
+window ledge then the wall is one essential and the
+ledge the other. 
+
+******** 5.02 Colour
+The conversion of games from other 8 bit platforms
+has thus far usually been monochrome since the
+placement of sprites has been limited by color.
+However using the AIC technique the background and
+sprite have complete freedom over a 6 colour
+palette.
+
+However implementing the colour is somewhat
+thwarted by size of the character.
+It is well advised to therefore aim at the
+envisaged final image rather than the character.
+Another way is to design the block in monochrome
+only then add colour afterwards.
+I have personally (Twilighte) found this very
+successful).
+
+
+******** 6.00 Example project - Converting Cybernoid
+
+There are several different ways to convert these
+graphics and i will use the following method...
+
+First i browse on the internet for
+"Spectrum Cybernoid".
+What we are looking for is the size of the blocks.
+Cybernoid is one of those games where the block
+size is pretty easy to identify. Look at the walls
+and corner stones. The repetition of the walls
+suggests the same size blocks are used to construct
+them as the corner pieces.
+In fact other shapes on the screen will also
+reflect that.
+
+From experience i would say the blocks are 2x2
+characters where each character is 8x8.
+Without experience, count the pixels. Also notice
+the colour changes on the corner pieces which
+suggest two characters (Spectrum colour
+constraints).
+
+So now i'll start capturing each block manually by
+redrawing in 12x12 pixel block in HIDE.
+Load up HIDE, press Esc to return to Files menu.
+Press 7 to clear the screen (and follow
+instructions if neccesary) then when in the Files
+menu again press 4 to view in HIRES (The latter
+sets the end of HIRES byte in the correct place).
+
+Now press Esc and plot 6 (Cyan Ink) in the first
+row then 3 (Yellow Ink) in the next row and
+repeat the pattern all the way down the screen.
+
+Now press Esc and save your screen. I called mine
+CYBERNOID which will appear in the directory as
+CYBERNOID.MEM
+
+Now Esc back to the editor. Notice the zoomed view
+in the bottom half of the screen is 12 pixels tall
+. This will prove very useful.
+
+I start by designing the wall block then progress
+to the four corner pieces. The one i am looking
+at here are the 3 sectioned corner ducts type.
+
+Next i design the strange contraption. Its got a
+wheel(as one block) on the left side and a sort
+of gear mechanism(another block) followed by
+shaft on the right.
+Problems here as Magenta and red is too direct a
+colour so a little improvisation.
+
+Next a different screen with seemingly stone
+corner pieces and wide pipes.
+There only seems two designs so i found those easy
+to convert.
+So now lets turn to some of the blocks within the
+walls.
+First block is the one that potrudes from the
+ground as a whart and ends with two spheres at the
+end of prongs.
+The last one (for the captured row) looks like the
+landing pad for the hero and is made up of two
+blocks.
+
+So now we have a good selection of captured blocks
+but we ought to also capture those patterned
+blocks inside the walls.
+Then save our work (CYBERNOID.MEM).
+
+
+Ok now thats done and saved, lets start using CBM.
+Esc then Zero to quit HIDE.
+
+Type CBM and select 7 from files menu.
+Change the Block height and width to 2 and
+quantity to 64.
+
+Although I only currently have 26 blocks I
+can anticipate quite a few more blocks such as
+the Red segmented pill and Alien infestations.
+
+With Capture one can keep adding Blocks or
+Characters as and when new stuff is found.
+
+Now the map dimensions. Each screen (or map) is
+composed of 16x10 blocks (examine the screens).
+So set the map width to 16 and height to 10.
+
+This will make the total play area 192 x 120.
+
+Now we must turn back to the web and look for
+the Cybernoid cheat map so we can determine the
+number of maps.
+
+Well almost immediately not only found the map
+but also discovered there are 3 levels and by
+the looks of it, destructable backgrounds.
+
+3 Levels means we should hold them all in
+a crunched form and this will also facilitate
+the restoration of the destructable backgrounds
+on each new game.
+Each level will contain the maps we create in
+CBM but the organisation of these maps will be
+hardcoded.
+Now even looking at the cheat map i cannot
+discern how many unique map screens there are
+so i will estimate 64.
+
+Press Return to confirm dimensions and Save the
+project.
+
+Now we may capture the blocks from CYBERNOID.MEM
+but before we do we should reserve Block 00 for
+Background (Black).
+So Esc to the Character Editor and press Func U
+to preserve Character 00 then Ctrl B to the
+Block Editor and type Func U again to mark the
+first block as used.
+Now press Esc to return to files then option 4 to
+capture and enter CYBERNOID.MEM.
+
+Now press U to switch to Block units and position
+the cursor over the first block. Press Return and
+the area will be captured to Block 01.
+Now move to the next block and so on until all
+27 blocks have been captured.
+
+Now Esc and Update Save then press Esc to return
+to Block Editor. Now press Ctrl M to go to the map
+Editor.
+
+You may now use any one of the 27 blocks in the
+map. I took the Cheat map of Cybernoid and zoomed
+in on the top left corner of level 3.
+The resolution of the cheat map was good enough to
+pick out which blocks went where.
+
+Then its a matter of copying each screen across.
+
+There is an incredible temptation to design your
+own screens or modify the existing and there is
+nothing wrong with that.
+
+The mapping of a screen to one other screen is
+the responsibility of the user and beyond the
+scope of CBM. However one easy way is to plot the
+info down on grid paper like this...
+
+  00 - 01 - 02 - 03 - 04 - 05 - 06 - 07        14
+  |                                  |         |
+  08 - 09 - 10                       11 - 12 - 13
+  |    |    |
+  15 - 16 - 17 - 21 - 22 - 23
+  |    |    |
+  18 - 19 - 20
+
+  
+******** 7.00 - Differences between versions
+0.01
+0.02
+  Screen Dimensions shown when designing NEW project
+  Facility to Dump current Map to Printer from Map Editor
+  Dump the collision table as part of the Files Dump option.
+  Clear out the 'used' flags after a NEW project
+
+******** 8.00 - Credits
+
+Code & Graphics - Twilighte
+Additional Ideas - Matt Coates
+

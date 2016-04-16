@@ -1,0 +1,44 @@
+CBM and Cybernoid
+
+Ok, i have finally completed a tool for the Oric called CBM.
+It is based around the AIC graphic technique used in games such as Stormlord and Impossible Mission.
+
+
+The construction of most Platform games consists of Characters, Blocks and Maps (hence CBM).
+On platforms other than the Oric, up to 256 Characters may be freed for use in games.
+However the Oric only permits up to 96 characters in text mode and none in HIRES.
+
+So Characters in HIRES are software driven only.
+In CBM they are 6 by 6 pixels and there are 256 available).
+
+Blocks are holders for characters and they also reduce the amount of memory by allowing certain shapes
+to be duplicated. Blocks can be from 2 by 2 to 8 by 8 characters and up to 256 of them.
+
+Maps are arenas or screens that hold blocks.
+
+Below is the Files screen, the first screen you will see, showing the current map dimensions, memory usage and files options.
+
+[img]http://www.defence-force.org/ftp/twilighte/Software/cbm/screenshots/screen26.bmp[/img]
+
+
+Below are the Block and Character Editor environments (with the Cybernoid project loaded) with the Character editor at the top and Block editor bottom-centre.
+
+[img]ftp.defence-force.org/twilighte/Software/cbm/screenshots/screen28.bmp[/img]
+
+Next is the converted graphics from Cybernoid. It is much better with AIC to use original graphics but then alot more work.
+
+[img]ftp.defence-force.org/twilighte/Software/cbm/screenshots/screen24.bmp[/img]
+
+Next are some of Cybernoid Level3 screens in CBM.
+
+[img]ftp.defence-force.org/twilighte/Software/cbm/screenshots/screen19.bmp[/img]
+
+[img]ftp.defence-force.org/twilighte/Software/cbm/screenshots/screen20.bmp[/img]
+
+[img]ftp.defence-force.org/twilighte/Software/cbm/screenshots/screen21.bmp[/img]
+
+[img]ftp.defence-force.org/twilighte/Software/cbm/screenshots/screen22.bmp[/img]
+
+[img]ftp.defence-force.org/twilighte/Software/cbm/screenshots/screen23.bmp[/img]
+
+The software is currently in beta testing but will be released soon.

@@ -1,0 +1,44 @@
+Issuelog for cbm
+
+20130207-001 X Block Editor: problem with bottom chars not staying
+               same as selected (Display issue) (Sandro)
+20130207-002 X Files: Saving or loading file does not set filename
+               in option 5
+20130207-003 X Dump: Doesn't dump Collision ID's
+20130207-004 X Capture: Not coded
+20130207-005 - if you designed an enormous map and only had memory
+	       for one, there is no facility yet to create a new
+	       project using the character and block memory from
+	       the previous project.
+20130207-006 X When quit files clear screen.
+20130209-001 X Characters and blocks are now marked as either used
+               or not by the "u" character to the right of the ID.
+               New keys are provided in the block and character
+               editors to toggle the used flag
+20130209-002 X The collision ID has now been reduced from 0-255 to
+               0-63 so that the table can also hold used flags
+20130209-003 X Doing New project now clears character set and used
+               flags for all blocks and characters
+20130209-004 X Capturing exotic codes and attributes should change
+               them to 64
+20130209-005 - Capture: check existance of file and Address Range
+               before loading it
+20130209-006 - Memory is not dynamic enough. Map memory is limited
+	       to 16K regardless how many blocks are used. Block
+	       memory is fixed at 2K.
+20130210-001 X Character Editor:Find next free Character not coded
+20130210-002 X Block Editor:Find next free Block not coded
+20130210-003 X Add Key help to Char,Block&Map Editors and make
+	       configurable
+20130210-004 - Create Soft Manual
+20130212-001 X Files: quote and exclamation mark corrupt. Replaced
+               quote with apostraphe and removed exclamation marks
+20130214-001 - Utility: convert character set 6x256 to 256x6 (faster
+	       Format)
+20120214-002 X Capture:Loaded screen then cleared every time.The mod
+               of the character set for ctrl and cursor graphics was
+               not taking into account if currently in text or hires
+20120215-001 - Map Editor: Should show selected block in cursor.
+20120215-002 - Map Editor: 2x2 Block, 16x10 map still push scrolls
+
+

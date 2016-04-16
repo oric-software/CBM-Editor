@@ -1,0 +1,101 @@
+Quick Key list for CBM Editor
+
+*********** Character Editor ***********
+Cursor Left       - Grid Cursor Left
+Cursor Right      - Grid Cursor Right
+Cursor Up         - Grid Cursor Up
+Cursor Down       - Grid Cursor Down
+                  
+CTRL Cursor Left  - Character Cursor Left 
+CTRL Cursor Right - Character Cursor Right
+CTRL Cursor Up    - Character Cursor Up   
+CTRL Cursor Down  - Character Cursor Down 
+                  
+CTRL B            - Jump to Block Editor
+CTRL M            - Jump to Map Editor
+ESC               - Jump to Files
+                  
+FUNC ,            - Copy As Last
+FUNC .            - Copy As Next
+FUNC J            - Char Grab
+FUNC K            - Char Drop
+FUNC W            - Char Scroll West
+FUNC E            - Char Scroll East
+FUNC H            - Char H Line
+FUNC V            - Char V Line
+FUNC N            - Char Scroll North
+FUNC S            - Char Scroll South
+FUNC Y            - Char Flip
+FUNC X            - Char Mirror
+FUNC R            - Char Rotate
+FUNC C            - Char Clear
+FUNC I            - Char Inverse Line
+FUNC -            - Decrement Collision ID
+FUNC =            - Increment Collision ID
+FUNC              - Toggle bit 
+FUNC [            - Top Colour
+FUNC ]            - Bot Colour
+FUNC U		  - Toggle Used Flag for character
+FUNC F		  - Select next Free Character
+
+***** Block Editor *****
+Cursor Left       - Move cursor left within block
+Cursor Right      - Move cursor right within block
+Cursor Up         - Move cursor Up within block
+Cursor Down       - Move cursor Down within block
+                    
+CTRL Cursor Left  - Char Cursor Left
+CTRL Cursor Right - Char Cursor Right
+CTRL Cursor Up    - Char Cursor Up
+CTRL Cursor Down  - Char Cursor Down
+ 
+CTRL C	          - Jump to Character Editor
+CTRL M	          - Jump to Map Editor
+ESC	          - Jump to Files
+ 
+Spacebar	  - Plot Character
+DEL		  - Delete (plot 00) Character beneath cursor
+,		  - decrement block
+.		  - increment block
+
+J	          - Grab Block
+K	          - Drop Block
+G	          - Grab Character under cursor
+FUNC C	          - Clear Block
+FUNC U		  - Toggle Used Flag for Block
+FUNC F		  - Select next free block
+
+******** Map Editor **********
+Cursor Left       - Move cursor left with possible push scroll
+Cursor Right      - Move Cursor Right with possible push scroll
+Cursor Up         - Move Cursor Up with possible push scroll
+Cursor Down       - Move Cursor Down with possible push scroll
+ 
+CTRL C		  - Jump to Character Editor
+CTRL B		  - Jump to Block Editor
+ESC		  - Jump to Files
+
+-		  - Decrement Block
+=		  - Increment Block
+Spacebar	  - Plot Block
+G		  - Grab block beneath cursor
+DEL		  - Delete (Plot block 00)
+FUNC C	          - Clear Map
+ 
+[		  - Previous Map
+]		  - Next Map
+
+********* Capture Editor ***********
+Cursor Left       - Move cursor left
+Cursor Right      - Move cursor right
+Cursor Up         - Move cursor Up
+Cursor Down       - Move cursor Down
+
+Z		  - Decrease Width (Character Units only)
+X		  - Increase Width (Character Units only)
+'                 - Decrease Height (Character Units only)
+/                 - Increase Height (Character Units only)
+
+U                 - Change Units (Block or Characters)
+Return            - Capture
+Esc               - Quit to Files
